@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de SKU</title>
+    <link rel="stylesheet" href="stilos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="tornillo.png">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Validador de Skus Amazon</h1>
+            <p>Detecta códigos duplicados de Amazon de forma rápida y precisa</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="input-section">
+                <label for="asinInput" class="input-label">
+                    Pega tus códigos ASIN aquí (uno por línea):
+                </label>
+                <textarea 
+                    id="asinInput" 
+                    class="textarea" 
+                    placeholder="B0CDVS3VH8&#10;B0D37KBB3X&#10;B07YLZ48T6&#10;...&#10;&#10;Pega todos tus códigos ASIN aquí, uno por línea"
+                ></textarea>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="validateASINs()">
+                    🔍 Validar Códigos
+                </button>
+                <button class="btn btn-secondary" onclick="clearInput()">
+                    🗑️ Limpiar Todo
+                </button>
+                <button class="btn btn-secondary" onclick="loadExample()">
+                    📋 Cargar Ejemplo
+                </button>
+            </div>
+            
+            <div id="results" class="results"></div>
+        </div>
+    </div>
+
+    <script src="src.js"></script>
+</body>
+</html>
